@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block page_title %}TODO: {{ todo.title }}{% endblock %}
+
+{% block content %}
+    <h2>{{ todo.title }}</h2>
+    <p>{{ todo.description|default:"No description provided." }}</p>
+    <p>Due Date: {{ todo.due_date|default:"N/A" }}</p>
+    <p>Status: {% if todo.resolved %}Done{% else %}Pending{% endif %}</p>
+    <p>Created At: {{ todo.created_at }}</p>
+
+    <div class="todo-actions">
+        <a href="{% url 'todo_update' todo.pk %}">Edit</a>
+        <a href="{% url 'todo_delete' todo.pk %}">Delete</a>
+        <form action="{% url 'todo_toggle_resolved' todo.pk %}" method="post">
+            {% csrf_token %}
+            <button type="submit">{% if todo.resolved %}Unmark as Done{% else %}Mark as Done{% endif %}</button>
+        </form>
+        <a href="{% url 'todo_list' %}">Back to List</a>
+    </div>
+{% endblock %}
