@@ -1,0 +1,34 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyd
+*.pyo
+*.egg-info/
+
+# Django stuff:
+*.log
+*.pot
+*.mo
+*.sqlite3 # Important for your database file
+.DS_Store # macOS specific files
+.env # Environment variables if you use them
+.venv/ # Your Python virtual environment
+env/
+venv/
+.venv/
+.vscode/
+/htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+.pytest_cache/
+# local_settings.py # If you have a separate local settings file with sensitive info
+media/
+static_collected/
+db.sqlite3
+
+uv.lock
+.python-version
+.python-history
+.python-history
